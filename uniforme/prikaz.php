@@ -33,8 +33,9 @@
 
         $sql= "SELECT *
               FROM artikal
-              INNER JOIN slika on artikal.id = slika.artikal_id
+              INNER JOIN slika on artikal.id = slika.artikal_id 
               WHERE artikal.id = $artikal_id;";
+              
 
         $result = $mysqli->query($sql) or die($mysqli->error);
         $row = $result->fetch_assoc();
