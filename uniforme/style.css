@@ -59,7 +59,7 @@ footer{
   position: absolute;
   background:  #ff5c72;
   width: 100%;
-  bottom: 0px;
+  
   
 }
 footer::before{
@@ -93,12 +93,13 @@ footer .content .top{
   height: 40px;
   width: 40px;
   margin: 0 8px;
+  padding: 10px;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
   color: #fff;
   font-size: 17px;
-  text-decoration: none;
+  
   transition: all 0.4s ease;
 }
 .top .media-icons a:nth-child(1){

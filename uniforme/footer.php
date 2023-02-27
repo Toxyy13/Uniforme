@@ -38,8 +38,9 @@
             </ul>
             <ul class="box input-box">
                 <li class="link_name">Lokacija</li>
-                <iframeframeborder="0" height="250" scrolling="no"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4476.601645162976!2d21.902807215504556!3d43.32018120661894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755b1cbc0c69daf%3A0xf2284db9055d70c!2sStefan%20I%20Ksenija%20uniforme!5e0!3m2!1ssr!2srs!4v1673967898080!5m2!1ssr!2srs" width="300"></iframe>
-            </ul>
+                <iframe 
+   frameborder="0" height="250" scrolling="no" 
+   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4476.601645162976!2d21.902807215504556!3d43.32018120661894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755b1cbc0c69daf%3A0xf2284db9055d70c!2sStefan%20I%20Ksenija%20uniforme!5e0!3m2!1ssr!2srs!4v1673967898080!5m2!1ssr!2srs" width="300"></iframe>            </ul>
         </div>
     </div>
     <div class="bottom-details">
@@ -53,7 +54,6 @@
             </span>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </footer>
 
 
