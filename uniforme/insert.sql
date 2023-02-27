@@ -40,5 +40,5 @@ INSERT INTO slika(`put`,`artikal_id`) VALUES
                  ("artikli/artikal3.jpg", 6);
 
 INSERT INTO dostupne_velicine (`artikal_id`,`velicine_size`)
-VALUES (1,'M'),
-        (1,'L');
+VALUES (1,'M');
+        
