@@ -42,13 +42,14 @@ INSERT INTO artikal(`sifra`,`naziv`,`vrsta_id`,`pol_id`,`cena`,`2XS`,`XS`,`S`,`M
                    (NULL,'Muske pantalone1',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester'),
                    (NULL,'Muske pantalone2',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester'),
                    (NULL,'Muske pantalone3',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester');
+
 INSERT INTO slika(`put`,`artikal_id`) VALUES
                  ("artikli/Muska bluza nitna.jpg", 1),
-                 ("artikli/Muska hirurskaa bluza1.jpg", 2),
-                 ("artikli/Muska hirurskaa bluza2.jpg", 3),
-                 ("artikli/Muska hirurskaa bluza3.jpg", 4),
-                 ("artikli/Muska hirurskaa bluza4.jpg", 5),
-                 ("artikli/Muska hirurskaa bluza5.jpg", 6),
+                 ("artikli/Muska hirurska bluza1.jpg", 2),
+                 ("artikli/Muska hirurska bluza2.jpg", 3),
+                 ("artikli/Muska hirurska bluza3.jpg", 4),
+                 ("artikli/Muska hirurska bluza4.jpg", 5),
+                 ("artikli/Muska hirurska bluza5.jpg", 6),
                  ("artikli/Muska bluza SUPERSTRETCH1.jpg", 7),
                  ("artikli/Muska bluza SUPERSTRETCH2.jpg", 8),
                  ("artikli/Muska bluza SUPERSTRETCH3.jpg", 9),

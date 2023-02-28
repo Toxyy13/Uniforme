@@ -32,36 +32,36 @@
           
           $vrsta = $_GET['vrsta'];
 
-          if($vrsta === 'bluzeM'){
-            $vrsta = "bluze";
-            $pol = 1;
-          }else {
-            $pol = 2;
-          }
-
           $sql="SELECT slika.put as put,
           artikal.id as id,
           artikal.naziv as naziv,
           artikal.cena as cena, 
-          pol_id
+          vrsta.naziv
           FROM slika
           INNER JOIN artikal on slika.artikal_id = artikal.id
           INNER JOIN vrsta on vrsta.id = artikal.vrsta_id
-          INNER JOIN pol on pol.id = artikal.pol_id
           WHERE vrsta.naziv = '{$vrsta}'";
 
           $result = $mysqli->query($sql) or die($mysqli->error);
-
+          $count = 0;
           while($row = $result->fetch_assoc()){
             echo "<div>
                     <a href='prikaz.php?id={$row['id']}'><img src='{$row['put']}' alt=''></a>
                     <p>{$row['naziv']}</p>
                     <p>{$row['cena']}</p>
                   </div>";
+              $count++;
             }
         } else {
           echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika' alt=''></a>";
           echo  "<a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika' alt=''></a>";
+        }
+
+        if($count===0){
+          echo "<div>
+                    <h3>ARTIKLI NISU TRENUTNO DOSTUPNI</h3>
+                </div>";
+                  
         }
       ?>
     </div>
