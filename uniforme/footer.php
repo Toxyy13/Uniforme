@@ -26,9 +26,10 @@
             </ul> 
             <ul class="box">
                 <li class="link_name">Kontakt</li>
-                <li><a href="#">+381(61)3917286</a></li>
-                <li><a href="#">+381(60)0177085</a></li>
+                <li><a>+381(61)3917286</a></li>
+                <li><a>+381(60)017085</a></li>
                 <li><a href="#">sixuniforme@gmail.com</a></li>
+                
             </ul>
             <ul class="box">
                 <li class="link_name">Informacije</li>
