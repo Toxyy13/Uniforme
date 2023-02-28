@@ -8,6 +8,10 @@
   font-family: "Montserrat", cursive;
   text-decoration: none;
   list-style: none;
+} 
+a{
+  text-decoration: none;
+  color:white;
 }
 img {
   z-index: 5;
@@ -28,8 +32,21 @@ nav {
   padding: 20px 0 20px 0;
   height: 100px;
   text-align: center;
+  z-index: 100;
 }
+.naslovnacnt{
+  width:100%;
 
+}
+.naslovna{
+  width:100%;
+  
+}
+.naslovna img{
+  width:30%;
+  background-color: transparent;
+  z-index: 200;
+}
 a {
   text-transform: uppercase;
   color: white;
@@ -53,6 +70,12 @@ a {
 .vrsta a {
   padding: 20px;
 }
+.vrsta:hover , .vrsta a:hover{
+  
+  color:#e17777;
+  
+}
+
 /* FOOTER CSS */
 
 footer{
@@ -98,7 +121,7 @@ footer .content .top{
   padding: 10px;
   border-radius: 50%;
   text-align: center;
-  line-height: 40px;
+  /* line-height: 40px; */
   color: #fff;
   font-size: 17px;
   
@@ -283,7 +306,11 @@ body.blur::before {
   background-color: black;
   color: white;
 }
-
+#cart{
+  position:absolute;
+  top:25px;
+  right:25px;
+}
 .popup-prikaz {
   padding-left: 7%;
   padding-top: 2%;
