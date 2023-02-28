@@ -11,33 +11,53 @@ INSERT INTO vrsta(naziv) VALUES
                  ("haljine"),
                  ("suknje"),
                  ("kape"),
-                 ("majice");
+                 ("majice"),
+                 ("bluzeM"),
+                 ("pantaloneM"),
+                 ("mantilM");
 
 
--- INSERT INTO velicine(`size`) VALUES
---                     ('XXS'),
---                     ('XS'),
---                     ('S'),
---                     ('M'),
---                     ('L'),
---                     ('XL'),
---                     ('XXL');
+INSERT INTO velicine(`size`) VALUES
+                    ('2XS'),
+                    ('XS'),
+                    ('S'),
+                    ('M'),
+                    ('L'),
+                    ('XL'),
+                    ('2XL'),
+                    ('3XL');
 
-INSERT INTO artikal(`sifra`,`naziv`,`opis`,`vrsta_id`,`pol_id`,`cena`,`XXS`,`XS`,`S`,`M`,`L`,`XL`,`XXL`) VALUES
-                   (10000,'Muska bluza',NULL,1,1,5999,NULL,NULL,1,1,1,NULL,NULL),
-                   (10000,'Muska bluza2',NULL,1,1,5999,NULL,1,NULL,NULL,NULL,1,NULL),
-                   (10000,'Zenksa bluza',NULL,1,2,5999,NULL,NULL,1,1,NULL,1,NULL),
-                   (10000,'zenska bluza2',NULL,1,2,5999,NULL,NULL,NULL,1,NULL,NULL,1),
-                   (10000,'Muske pantalone',NULL,2,1,5999,NULL,1,NULL,1,NULL,NULL,NULL),
-                   (10000,'Zenske pantalone',NULL,2,2,5999,NULL,1,1,NULL,1,NULL,NULL);
-
+INSERT INTO artikal(`sifra`,`naziv`,`vrsta_id`,`pol_id`,`cena`,`2XS`,`XS`,`S`,`M`,`L`,`XL`,`2XL`, `3XL`,`opis`) VALUES
+                   (NULL,'Muska bluza nitna',8,1,5999,NULL,NULL,NULL,NULL,1,1,1,1,'Muska bluza na kopcanje sa dikerima i 3 dzepa. Sastav 35% pamuk, 65%poliester.'),
+                   (NULL,'Muska hirurska bluza1',8,1,5999,NULL,NULL,1,1,1,1,1,1,'Muska hirurska bluza na V sa 3 dzepa. Sastav 35%pamuk, 65%poliester'),
+                   (NULL,'Muska hirurska bluza2',8,1,5999,NULL,NULL,1,1,1,1,1,1,'Muska hirurska bluza na V sa 3 dzepa. Sastav 35%pamuk, 65%poliester'),
+                   (NULL,'Muska hirurska bluza3',8,1,5999,NULL,NULL,1,1,1,1,1,1,'Muska hirurska bluza na V sa 3 dzepa. Sastav 35%pamuk, 65%poliester'),
+                   (NULL,'Muska hirurska bluza4',8,1,5999,NULL,NULL,1,1,1,1,1,1,'Muska hirurska bluza na V sa 3 dzepa. Sastav 35%pamuk, 65%poliester'),
+                   (NULL,'Muska hirurska bluza5',8,1,5999,NULL,NULL,1,1,1,1,1,1,'Muska hirurska bluza na V sa 3 dzepa. Sastav 35%pamuk, 65%poliester'),
+                   (NULL,'Muska bluza SUPERSTRETCH1',8,1,5999,1,1,1,1,1,1,NULL,1,'Lagana bluza koja pruza neverovatan osecaj lakoce i udobnosti. Sastav bluze: 60%pamuk, 35%poliester i 5%elastin'),
+                   (NULL,'Muska bluza SUPERSTRETCH2',8,1,5999,1,1,NULL,NULL,1,NULL,1,1,'Lagana bluza koja pruza neverovatan osecaj lakoce i udobnosti. Sastav bluze: 60%pamuk, 35%poliester i 5%elastin'),
+                   (NULL,'Muska bluza SUPERSTRETCH3',8,1,5999,1,1,1,1,1,1,NULL,NULL,'Lagana bluza koja pruza neverovatan osecaj lakoce i udobnosti. Sastav bluze: 60%pamuk, 35%poliester i 5%elastin'),
+                   (NULL,'Muska bluza SUPERSTRETCH4',8,1,5999,NULL,1,NULL,NULL,1,1,1,1,'Lagana bluza koja pruza neverovatan osecaj lakoce i udobnosti. Sastav bluze: 60%pamuk, 35%poliester i 5%elastin'),
+                   (NULL,'Muska bluza SUPERSTRETCH5',8,1,5999,1,1,1,1,1,1,NULL,NULL,'Lagana bluza koja pruza neverovatan osecaj lakoce i udobnosti. Sastav bluze: 60%pamuk, 35%poliester i 5%elastin'),
+                   (NULL,'Muske pantalone1',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester'),
+                   (NULL,'Muske pantalone2',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester'),
+                   (NULL,'Muske pantalone3',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester');
 INSERT INTO slika(`put`,`artikal_id`) VALUES
-                 ("artikli/artikalM1.jpg", 1),
-                 ("artikli/artikalM2.jpg", 2),
-                 ("artikli/artikal1.jpg", 3),
-                 ("artikli/artikal2.jpg", 4),
-                 ("artikli/artikalM3.jpg", 5),
-                 ("artikli/artikal3.jpg", 6);
+                 ("artikli/Muska bluza nitna.jpg", 1),
+                 ("artikli/Muska hirurskaa bluza1.jpg", 2),
+                 ("artikli/Muska hirurskaa bluza2.jpg", 3),
+                 ("artikli/Muska hirurskaa bluza3.jpg", 4),
+                 ("artikli/Muska hirurskaa bluza4.jpg", 5),
+                 ("artikli/Muska hirurskaa bluza5.jpg", 6),
+                 ("artikli/Muska bluza SUPERSTRETCH1.jpg", 7),
+                 ("artikli/Muska bluza SUPERSTRETCH2.jpg", 8),
+                 ("artikli/Muska bluza SUPERSTRETCH3.jpg", 9),
+                 ("artikli/Muska bluza SUPERSTRETCH4.jpg", 10),
+                 ("artikli/Muska bluza SUPERSTRETCH5.jpg", 11),
+                 ("artikli/Muske pantalone1.jpg", 12),
+                 ("artikli/Muske pantalone2.jpg", 13),
+                 ("artikli/Muske pantalone3.jpg", 14);
+
 
 
 
