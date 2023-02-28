@@ -8,4 +8,10 @@
         $_SESSION['cart'] = array();
     }
 
+    if(isset($_SESSION['korpa'])) {
+        $korpa = $_SESSION['korpa'];
+    } else {
+        $korpa = array();
+    }
+
 ?>
