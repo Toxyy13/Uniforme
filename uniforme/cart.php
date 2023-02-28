@@ -1,6 +1,5 @@
 <?php
-        require_once "functions.php"; 
-
+        require_once "functions.php";
         $table = 'artikal';
         $sql="SELECT * FROM $table";
         
@@ -29,28 +28,47 @@
 
         <?php
 
-            
-            foreach($_SESSION['cart'] as $key=>$value){
-                $result = $mysqli->query("SELECT * FROM $table WHERE artikal.id=$value") or die($mysqli->error);
-                $row = $result->fetch_assoc();
-                $naziv = $row['naziv'];
-                $cena= $row['cena'];
 
-                echo "
-                  <div class='col-3'>
-                    <div class='cart-img'>
-                        <img src ='{$row['slika']}' >
-                    </div>
-
-                    <div class='cart-info'>
-                        
-                            <p>$naziv<br>
-                            $cena RSD</p>
-    
-                    </div>
-                 </div>";
-
+            if(isset($_SESSION['korpa'])) {
+                $korpa = $_SESSION['korpa'];
+                foreach($korpa as $artikal) {
+                echo $artikal['naziv'] . " x " . $artikal['kolicina'] . "<br>";
+                echo "Cijena: " . $artikal['cijena'] . " KM <br>";
+                echo "<form action='azuriraj_korpu.php' method='post'>";
+                echo "<input type='hidden' name='artikal_id' value='" . $artikal['id'] . "'>";
+                echo "Količina: <input type='number' name='kolicina' min='1' value='" . $artikal['kolicina'] . "'>";
+                echo "<button type='submit' name='azuriraj_kolicinu'>Ažuriraj</button>";
+                echo "<button type='submit' name='ukloni_iz_korpe'>Ukloni</button>";
+                echo "</form>";
+                echo "<br>";
+                }
+            } else{
+                echo "moze svi da pusimo kurac";
+                echo "zastoo";
             }
+            
+            
+            // foreach($_SESSION['cart'] as $key=>$value){
+            //     $result = $mysqli->query("SELECT * FROM $table WHERE artikal.id=$value") or die($mysqli->error);
+            //     $row = $result->fetch_assoc();
+            //     $naziv = $row['naziv'];
+            //     $cena= $row['cena'];
+
+            //     echo "
+            //       <div class='col-3'>
+            //         <div class='cart-img'>
+            //             <img src ='{$row['slika']}' >
+            //         </div>
+
+            //         <div class='cart-info'>
+                        
+            //                 <p>$naziv<br>
+            //                 $cena RSD</p>
+    
+            //         </div>
+            //      </div>";
+
+            // }
 
             // $product_id = array_column($_SESSION['cart'],'product_id');
 
@@ -84,13 +102,6 @@
     <div class="cart-price">
 
     </div>
-
-
-<script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-  
-    <script src="https://unpkg.com/babel-standalone"></script>
-
 
     <script src="index.js" type="text/jsx"></script>
 
