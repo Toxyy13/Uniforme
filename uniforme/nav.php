@@ -1,8 +1,7 @@
-<link rel="stylesheet" href="stil.css">
-<h1 class="naslov">SIX UNIFORME</h1>
-        
 
+    
 <nav >
+    <img src="logo.png" id="logo" alt="">
     <div class="vrsta">
         <a href="" class="meni">ZENSKA UNIFORMA</a>
         <ul class="vrste"><br><br>

@@ -1,7 +1,7 @@
 <?php
     require_once "functions.php"; 
 
-    $title = "Six Uniforme";
+    $title = "Six Uniformeee";
     $table = 'artikal';
     
     // $haljina= 'haljina';
@@ -11,7 +11,7 @@
 <html>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
 
     <?php require_once "nav.php"; ?>
 
-    <div class="naslovnacnt">
+    <div class="naslovnacnt"> 
       <?php
         if(isset($_GET['vrsta'])){
           $vrsta = $_GET['vrsta'];
@@ -34,7 +34,7 @@
           $sql="SELECT slika.put as put,
                        artikal.id as id,
                        artikal.naziv as naziv,
-                       artikal.cena as cena
+                       artikal.cena as cena 
                 FROM slika
                 INNER JOIN artikal on slika.artikal_id = artikal.id
                 INNER JOIN vrsta on vrsta.id = artikal.vrsta_id
