@@ -53,8 +53,8 @@
               $count++;
             }
         } else {
-          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika' alt=''></a>";
-          echo  "<a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika' alt=''></a>";
+          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika01' alt=''></a>";
+          echo  "<a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika01' alt=''></a>";
         }
 
         if($count===0){
