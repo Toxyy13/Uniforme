@@ -29,16 +29,26 @@
     <div class="naslovnacnt"> 
       <?php
         if(isset($_GET['vrsta'])){
-          $vrsta = $_GET['vrsta'];
           
+          $vrsta = $_GET['vrsta'];
+
+          if($vrsta === 'bluzeM'){
+            $vrsta = "bluze";
+            $pol = 1;
+          }else {
+            $pol = 2;
+          }
+
           $sql="SELECT slika.put as put,
-                       artikal.id as id,
-                       artikal.naziv as naziv,
-                       artikal.cena as cena 
-                FROM slika
-                INNER JOIN artikal on slika.artikal_id = artikal.id
-                INNER JOIN vrsta on vrsta.id = artikal.vrsta_id
-                WHERE vrsta.naziv = '{$vrsta}';";
+          artikal.id as id,
+          artikal.naziv as naziv,
+          artikal.cena as cena, 
+          pol_id
+          FROM slika
+          INNER JOIN artikal on slika.artikal_id = artikal.id
+          INNER JOIN vrsta on vrsta.id = artikal.vrsta_id
+          INNER JOIN pol on pol.id = artikal.pol_id
+          WHERE vrsta.naziv = '{$vrsta}' AND pol_id = {$pol}";
 
           $result = $mysqli->query($sql) or die($mysqli->error);
 
@@ -51,7 +61,7 @@
             }
         } else {
           echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/artikalM1' alt=''></a>";
-          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/artikal1' alt=''></a>";
+          echo  "<a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/artikal1' alt=''></a>";
         }
       ?>
     </div>
