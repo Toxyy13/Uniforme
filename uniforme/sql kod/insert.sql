@@ -1,4 +1,4 @@
-
+USE uniforme;
 INSERT INTO pol(naziv) VALUES
                 ("musko"),
                 ("zensko"),

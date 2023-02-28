@@ -53,12 +53,14 @@
               $count++;
             }
         } else {
-          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika01' alt=''></a>";
-          echo  "<a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika01' alt=''></a>";
+          echo  "<div class='nsl'>
+                  <a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika' alt=''></a>
+                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika' alt=''></a>
+                </div>";
         }
 
         if($count===0){
-          echo "<div>
+          echo "<div class='ndstpn'>
                     <h3>ARTIKLI NISU TRENUTNO DOSTUPNI</h3>
                 </div>";
                   
