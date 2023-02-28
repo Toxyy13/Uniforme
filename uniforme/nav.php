@@ -1,9 +1,10 @@
 
     
 <nav >
-    <img src="logo.png" id="logo" alt="">
+    <a href="index.php" class="logonaslov"><img src="logo.png" id="logo" alt=""></a>
     <div class="vrsta">
-        <a href="" class="meni">ZENSKA UNIFORMA</a>
+        <a href="" class="meni">
+            ZENSKA UNIFORMA</a>
         <ul class="vrste"><br><br>
             <li><a href="index.php?vrsta=bluze">Bluze</a></li><br>
             <li><a href="index.php?vrsta=pantalone">Pantalone</a></li><br>
@@ -23,13 +24,8 @@
     </div>
     <a href="" class="vrsta">KAPE</a>
     <a href="" class="vrsta">MAJICE</a>
-</nav>
-
-
-
-    <a href="cart.php" class="cart">
-        <h4 >
-            <i class="bi bi-cart" id="cart"></i> Korpa
+    <a href="cart.php" class="cart vrsta">
+            <i class="bi bi-cart" id="cart"></i>
             <?php 
                 if(isset($_SESSION['cart'])){
                     $count = count($_SESSION['cart']);
@@ -39,5 +35,9 @@
                     echo "<span>0</span>";
 
             ?>
-        </h4>
     </a>
+</nav>
+
+
+
+

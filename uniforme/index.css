@@ -9,9 +9,13 @@
   text-decoration: none;
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: white;
+}
+a::before :hover {
+  color: #fb3434;
 }
 img :not(#logo) {
   z-index: -100;
@@ -19,20 +23,29 @@ img :not(#logo) {
 .naslovna {
   z-index: -100;
 }
-
+.logonaslov {
+  max-width: 100px;
+}
+#logo {
+  width: 100%;
+}
+#logo:hover {
+  transform: scale(1.3);
+  transition-duration: 1.5s;
+}
 .naslov {
   font-family: "Allerta Stencil", sans-serif;
   text-align: center;
   padding: 30px 0 30px 0;
   font-size: 3em;
   letter-spacing: 8px;
-  color: #b94545;
+  color: #fb3434;
 }
 nav {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  background-color: #b94545;
+  background-color: #fb3434;
   padding: 20px 0 20px 0;
   height: 100px;
   text-align: center;
@@ -54,7 +67,7 @@ a {
 }
 .vrsta {
   padding: 20px;
-  background: #b94545;
+  background: #fb3434;
 }
 .vrsta ul {
   display: none;
@@ -64,14 +77,14 @@ a {
 }
 
 .vrste {
-  background: #b94545;
+  background: #fb3434;
   text-align: left;
   gap: 4px;
-  z-index: 100;
+  position: relative;
+  z-index: 10000;
 }
 .vrsta a {
   padding: 20px;
-  z-index: 100;
 }
 .vrsta:hover,
 .vrsta a:hover {
@@ -306,10 +319,12 @@ body.blur::before {
   background-color: black;
   color: white;
 }
+.cart:hover {
+  color: #c27777;
+}
+
 #cart {
-  position: absolute;
-  top: 25px;
-  right: 25px;
+  font-size: 35px;
 }
 .popup-prikaz {
   padding-left: 7%;
@@ -335,5 +350,10 @@ body.blur::before {
   width: auto;
   height: 150px;
 }
+/* .cart {
+  position: absolute;
+  top: 10px;
+  right: 32px;
+} */
 
 /* OVDE SE ZAVRSAVA POPUP KORPA */

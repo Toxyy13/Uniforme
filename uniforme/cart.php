@@ -43,10 +43,7 @@
                 echo "</form>";
                 echo "<br>";
                 }
-            } else{
-                echo "moze svi da pusimo kurac";
-                echo "zastoo";
-            }
+            } 
             
             
             // foreach($_SESSION['cart'] as $key=>$value){
