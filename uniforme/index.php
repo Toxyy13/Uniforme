@@ -57,7 +57,7 @@
     </div>
     <?php require_once "footer.php";?>
    
-
+    <script src="skripta.js"></script>
 </body>
 </html>
 </html>

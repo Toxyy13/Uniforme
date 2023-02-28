@@ -1,3 +1,4 @@
+
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
@@ -34,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `uniforme`.`pol` (
   `naziv` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 13
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -46,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `uniforme`.`vrsta` (
   `naziv` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 29
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -55,11 +54,20 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `uniforme`.`artikal` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `sifra` INT(11) NOT NULL,
+  `sifra` INT(11) NULL,
   `naziv` VARCHAR(150) NOT NULL,
   `cena` INT(11) NOT NULL,
   `vrsta_id` INT(11) NOT NULL,
   `pol_id` INT(11) NOT NULL,
+  `opis` VARCHAR(300),
+  `XXS` TINYINT(5) NULL,
+  `XS` TINYINT(5) NULL,
+  `S` TINYINT(5) NULL,
+  `M` TINYINT(5) NULL,
+  `L` TINYINT(5) NULL,
+  `XL` TINYINT(5) NULL,
+  `XXL` TINYINT(5) NULL,
+  `XXXL` TINYINT(5) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_artikal_vrsta1_idx` (`vrsta_id` ASC) ,
   INDEX `fk_artikal_pol1_idx` (`pol_id` ASC) ,
@@ -74,7 +82,6 @@ CREATE TABLE IF NOT EXISTS `uniforme`.`artikal` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 12
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -134,7 +141,6 @@ CREATE TABLE IF NOT EXISTS `uniforme`.`slika` (
   PRIMARY KEY (`id`, `artikal_id`),
   INDEX `fk_slika_artikal1_idx` (`artikal_id` ASC) )
 ENGINE = MyISAM
-AUTO_INCREMENT = 7
 DEFAULT CHARACTER SET = utf8;
 
 

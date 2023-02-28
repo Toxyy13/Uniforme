@@ -12,6 +12,7 @@
         $korpa = $_SESSION['korpa'];
     } else {
         $korpa = array();
+        $_SESSION['korpa']= $korpa;
     }
 
 ?>
