@@ -5,7 +5,7 @@ INSERT INTO pol(naziv) VALUES
                 ("uniseks");
 
 INSERT INTO vrsta(naziv) VALUES
-                 ("bluze"),
+                 ("bluze"),    
                  ("pantalone"),
                  ("mantil"),
                  ("haljine"),
@@ -13,14 +13,15 @@ INSERT INTO vrsta(naziv) VALUES
                  ("kape"),
                  ("majice");
 
-INSERT INTO velicine(`size`) VALUES
-                    ('XXS'),
-                    ('XS'),
-                    ('S'),
-                    ('M'),
-                    ('L'),
-                    ('XL'),
-                    ('XXL');
+
+-- INSERT INTO velicine(`size`) VALUES
+--                     ('XXS'),
+--                     ('XS'),
+--                     ('S'),
+--                     ('M'),
+--                     ('L'),
+--                     ('XL'),
+--                     ('XXL');
 
 INSERT INTO artikal(`sifra`,`naziv`,`opis`,`vrsta_id`,`pol_id`,`cena`,`XXS`,`XS`,`S`,`M`,`L`,`XL`,`XXL`) VALUES
                    (10000,'Muska bluza',NULL,1,1,5999,NULL,NULL,1,1,1,NULL,NULL),

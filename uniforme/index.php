@@ -48,7 +48,7 @@
           INNER JOIN artikal on slika.artikal_id = artikal.id
           INNER JOIN vrsta on vrsta.id = artikal.vrsta_id
           INNER JOIN pol on pol.id = artikal.pol_id
-          WHERE vrsta.naziv = '{$vrsta}' AND pol_id = {$pol}";
+          WHERE vrsta.naziv = '{$vrsta}'";
 
           $result = $mysqli->query($sql) or die($mysqli->error);
 
@@ -61,7 +61,7 @@
             }
         } else {
           echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika' alt=''></a>";
-          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_m_slika' alt=''></a>";
+          echo  "<a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika' alt=''></a>";
         }
       ?>
     </div>
