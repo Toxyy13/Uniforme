@@ -88,6 +88,8 @@ footer .content .top{
 }
 .content .top .media-icons{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .content .top .media-icons a{
   height: 40px;
