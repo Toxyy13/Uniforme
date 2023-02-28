@@ -60,8 +60,8 @@
                   </div>";
             }
         } else {
-          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/artikalM1' alt=''></a>";
-          echo  "<a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/artikal1' alt=''></a>";
+          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika' alt=''></a>";
+          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_m_slika' alt=''></a>";
         }
       ?>
     </div>
