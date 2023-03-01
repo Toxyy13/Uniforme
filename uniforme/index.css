@@ -9,14 +9,22 @@
   text-decoration: none;
   list-style: none;
 }
-body{
-  background:#ec8794a4;
+body {
+  background: #ec8794a4;
 }
-.naslovna img{
-  height: 70vh;
-  /* margin-top: 40px; 
-  margin-bottom: 40px;
-  margin-left: 220px;*/
+.naslovna img {
+  width: 70%;
+}
+.slogan {
+  color: #ff5c72;
+  text-align: center;
+  font-weight: bolder;
+}
+.rotirajdesno {
+  transform: rotate("15deg");
+}
+.rotirajlevo {
+  transform: rotate("-15deg");
 }
 a {
   text-decoration: none;
@@ -30,6 +38,7 @@ img :not(#logo) {
 }
 .naslovna {
   z-index: -100;
+  width: 60%;
 }
 .logonaslov {
   max-width: 100px;
@@ -41,14 +50,7 @@ img :not(#logo) {
   transform: scale(1.3);
   transition-duration: 1.5s;
 }
-.naslov {
-  font-family: "Allerta Stencil", sans-serif;
-  text-align: center;
-  padding: 30px 0 30px 0;
-  font-size: 3em;
-  letter-spacing: 8px;
-  color: #ff5c72;
-}
+
 nav {
   display: flex;
   width: 100%;
@@ -61,21 +63,20 @@ nav {
 }
 .naslovnacnt {
   width: 100%;
-  text-align:center;
-  
+  text-align: center;
 }
-.ndstpn{
+.ndstpn {
   background-color: #ff5c72;
-  color:white;
+  color: white;
 }
-.nsl{
-  width:100%;
-  display:flex;
-  
+
+.nsl {
+  width: 100%;
+  display: flex;
+
   justify-content: space-around;
   align-items: center;
 }
-
 
 a {
   text-transform: uppercase;
@@ -250,6 +251,16 @@ footer .content .link-boxes .box {
   color: #afafb6;
   font-size: 16px;
 }
+.porlab {
+  color: white;
+}
+.porbor {
+  width: 100%;
+  border: 2px #afafb6 solid;
+  border-radius: 10px;
+  color: #ff5c72;
+  background-color: white;
+}
 .link-boxes .input-box input[type="button"] {
   background: #fff;
   color: #140b5c;
@@ -267,7 +278,7 @@ footer .content .link-boxes .box {
 footer .bottom-details {
   width: 100%;
   background: #ff5c72;
-  border-top:#afafb6 solid 3px;
+  border-top: #afafb6 solid 3px;
 }
 footer .bottom-details .bottom_text {
   max-width: 1250px;

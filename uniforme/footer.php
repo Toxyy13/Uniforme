@@ -28,8 +28,28 @@
                 <li class="link_name">Kontakt</li>
                 <li><a>+381(61)3917286</a></li>
                 <li><a>+381(60)017085</a></li>
-                <li><a href="#">sixuniforme@gmail.com</a></li>
-                
+                <li><a href="mailto:sixuniforme@gmail.com">sixuniforme@gmail.com</a></li>
+                <script>
+                    // proverite da li je JavaScript dostupan
+                    if (typeof document.createElement('form').checkValidity !== 'function') {
+                      // ako nije, zamenite link sa običnim e-poštanim linkom
+                      var link = document.querySelector('a[href^="mailto:"]');
+                      link.innerHTML = 'Kontaktirajte nas putem <br> e-pošte na ' + link.getAttribute('href').substr(7);
+                    } else {
+                      // ako jeste, dodajte kod za prikaz forme ovde
+                      var link = document.querySelector('a[href^="mailto:"]');
+                      link.addEventListener('click', function(e) {
+                        e.preventDefault(); // sprečava slanje e-pošte
+                        var form = document.createElement('form');
+                        form.setAttribute('action', 'mailto:' + link.getAttribute('href').substr(7));
+                        form.setAttribute('method', 'post');
+                        form.innerHTML = '<label class="porlab" for="poruka">Poruka:</label><br>' +
+                          '<textarea name="poruka" id="poruka" class="porbor" cols="30" rows="10"></textarea><br>' +
+                          '<input type="submit" class="porbor" value="Pošalji">';
+                        link.parentNode.replaceChild(form, link);
+                      });
+                    }
+                </script>
             </ul>
             <ul class="box">
                 <li class="link_name">Informacije</li>

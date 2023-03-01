@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <?php require_once "nav.php"; ?>
 
     <div class="naslovnacnt"> 
@@ -54,8 +54,9 @@
             }
         } else {
           echo  "<div class='nsl'>
-                  <a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika01' alt=''></a>
-                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika01' alt=''></a>
+                  <a class='naslovna' href='index.php?vrsta=bluze'><img class='rotirajdesno' src='artikli/pocetna_z_slika01' alt=''></a>
+                  <p class='slogan'>OPREMITE SE ZA SVOJU BUDUCNOST</p>
+                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img class='rotirajlevo' src='artikli/pocetna_m_slika01' alt=''></a>
                 </div>";
         }
 
@@ -66,10 +67,18 @@
         }
 
       ?>
+      <script>
+        $(document).ready(function() {
+          setInterval(function() {
+            $('.rotiraj-levo').animate({ deg: '-=15deg' }, { duration: 500 });
+            $('.rotiraj-desno').animate({ deg: '+=15deg' }, { duration: 500 });
+          }, 5000); // promena smera rotacije svakih 5 sekundi
+        });
+        </script>
     </div>
     <?php require_once "footer.php";?>
    
-    <script src="skripta.js"></script>
+    <script src="skripta.js"></?script>
 </body>
 </html>
 </html>
