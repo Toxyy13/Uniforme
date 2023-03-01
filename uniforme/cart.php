@@ -45,35 +45,71 @@
             //     }
             // } 
             
+            if(isset($_SESSION['cart'])){
+                $korpa = $_SESSION['cart'];
+
+                foreach($korpa as $artikal){
+
+                    $id = $artikal['id'];
+                    $velicina = $artikal['velicina'];
+
+                    $sql = "SELECT * 
+                            FROM artikal 
+                            INNER JOIN slika on slika.artikal_id = artikal.id
+                            WHERE artikal.id = $id;";
+
+                    $result = $mysqli->query($sql) or die($mysqli->error);
+                    $row = $result->fetch_assoc();
+
+                    $naziv = $row['naziv'];
+                    $cena= $row['cena']; 
+                    $put = $row['put'];
+
+                    echo "
+                          <div class=''>
+                          
+                            <div class='cart-img'>
+                                <img src ='{$put}' >
+                            </div>
+        
+                            <div class='cart-info'>
+                                
+                                    <p>$naziv<br>
+                                    $cena RSD $velicina</p>
             
-            foreach($_SESSION['cart'] as $key=>$value){
-                
-                $sql = "SELECT * 
-                FROM artikal 
-                INNER JOIN slika on slika.artikal_id = artikal.id
-                WHERE artikal.id = $value;";
-
-                $result = $mysqli->query($sql) or die($mysqli->error);
-                $row = $result->fetch_assoc();
-                $naziv = $row['naziv'];
-                $cena= $row['cena']; 
-                $put = $row['put'];
-
-                echo "
-                  <div class=''>
-                    <div class='cart-img'>
-                        <img src ='{$put}' >
-                    </div>
-
-                    <div class='cart-info'>
-                        
-                            <p>$naziv<br>
-                            $cena RSD</p>
-    
-                    </div>
-                 </div>";
-
+                            </div>
+                         </div>";
+                }
             }
+            
+            // foreach($_SESSION['cart'] as $key=>$value){
+                
+            //     $sql = "SELECT * 
+            //     FROM artikal 
+            //     INNER JOIN slika on slika.artikal_id = artikal.id
+            //     WHERE artikal.id = $value;";
+
+            //     $result = $mysqli->query($sql) or die($mysqli->error);
+            //     $row = $result->fetch_assoc();
+            //     $naziv = $row['naziv'];
+            //     $cena= $row['cena']; 
+            //     $put = $row['put'];
+
+            //     echo "
+            //       <div class=''>
+            //         <div class='cart-img'>
+            //             <img src ='{$put}' >
+            //         </div>
+
+            //         <div class='cart-info'>
+                        
+            //                 <p>$naziv<br>
+            //                 $cena RSD</p>
+    
+            //         </div>
+            //      </div>";
+
+            // }
 
             // $product_id = array_column($_SESSION['cart'],'product_id');
 

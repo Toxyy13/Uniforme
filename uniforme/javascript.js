@@ -60,6 +60,19 @@
   //   xhr.send(new FormData(form));
   // }
   
+  document.getElementById('cartForm').addEventListener('submit', function(event) {
+    // Spriječi podrazumevano ponašanje forme da osveži stranicu
+    event.preventDefault();
+
+    // Učitajte podatke forme u promenljivu formData
+    const formData = new FormData(event.target);
+
+    // Sada možete obraditi podatke forme na željeni način, na primer slanjem AJAX zahteva
+    // Ovde ćemo jednostavno ispisati podatke forme u konzoli
+    for (var pair of formData.entries()) {
+      console.log(pair[0]+ ': ' + pair[1]);
+    }
+  });
 
   $(document).ready(function(){
       $("cartForm").submit(function(event){

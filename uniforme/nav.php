@@ -28,7 +28,9 @@
             <i class="bi bi-cart" id="cart"></i>
             <?php 
                 if(isset($_SESSION['cart'])){
-                    $count = count($_SESSION['cart']);
+                    $korpa = $_SESSION['cart'];
+                    $count = count($korpa);
+                    
                     echo "<span>$count</span>";
                 } 
                 else 
