@@ -54,14 +54,13 @@
             }
         } else {
           echo  "<div class='nsl'>
-                  <a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika01' alt=''></a>        
-                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika01' alt=''></a>
+                  <h1 class='slogan'>OPREMITE SE ZA SVOJU BUDUĆNOST</h1>
                 </div>";
                 echo "<style>
                 .naslovnacnt , .nsl{
-                  display: flex;
-                  justify-content: space-around;
-                  align-items: center;
+                    display:block;
+                    height:70vh;
+                    
                 }
               </style>";
         }
