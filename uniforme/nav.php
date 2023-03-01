@@ -18,7 +18,7 @@
         <ul class="vrste"><br><br>
             <li><a href="index.php?vrsta=bluzeM">Bluze</a></li> <br>
             <li><a href="index.php?vrsta=pantaloneM">Pantalone</a></li><br>
-            <li><a href="index.php?vrsta=haljinaM">Mantil</a></li><br>
+            <li><a href="index.php?vrsta=mantilM">Mantil</a></li><br>
 
         </ul>
     </div>

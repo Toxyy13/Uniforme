@@ -29,35 +29,47 @@
     <div class="naslovnacnt"> 
       <?php
         if(isset($_GET['vrsta'])){
-          $vrsta = $_GET['vrsta'];
           
+          $vrsta = $_GET['vrsta'];
+
           $sql="SELECT slika.put as put,
-                       artikal.id as id,
-                       artikal.naziv as naziv,
-                       artikal.cena as cena 
-                FROM slika
-                INNER JOIN artikal on slika.artikal_id = artikal.id
-                INNER JOIN vrsta on vrsta.id = artikal.vrsta_id
-                WHERE vrsta.naziv = '{$vrsta}';";
+          artikal.id as id,
+          artikal.naziv as naziv,
+          artikal.cena as cena, 
+          vrsta.naziv as vrsta
+          FROM slika
+          INNER JOIN artikal on slika.artikal_id = artikal.id
+          INNER JOIN vrsta on vrsta.id = artikal.vrsta_id
+          WHERE vrsta.naziv = '{$vrsta}'";
 
           $result = $mysqli->query($sql) or die($mysqli->error);
-
+          $count = 0;
           while($row = $result->fetch_assoc()){
             echo "<div>
                     <a href='prikaz.php?id={$row['id']}'><img src='{$row['put']}' alt=''></a>
                     <p>{$row['naziv']}</p>
                     <p>{$row['cena']}</p>
                   </div>";
+              $count++;
             }
         } else {
-          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/artikalM1' alt=''></a>";
-          echo  "<a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/artikal1' alt=''></a>";
+          echo  "<div class='nsl'>
+                  <a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika01' alt=''></a>
+                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika01' alt=''></a>
+                </div>";
         }
+
+        if($count===0){
+          echo "<div class='ndstpn'>
+                    <h3>ARTIKLI NISU TRENUTNO DOSTUPNI</h3>
+                </div>";
+        }
+
       ?>
     </div>
     <?php require_once "footer.php";?>
    
-
+    <script src="skripta.js"></script>
 </body>
 </html>
 </html>

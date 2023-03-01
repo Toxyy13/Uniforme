@@ -34,14 +34,17 @@
         $sql= "SELECT *
               FROM artikal
               INNER JOIN slika on artikal.id = slika.artikal_id 
-              WHERE artikal.id = $artikal_id;";
+              WHERE artikal.id = $artikal_id";
               
 
         $result = $mysqli->query($sql) or die($mysqli->error);
         $row = $result->fetch_assoc();
         $naziv = $row['naziv'];   
         $cena = $row['cena'];
-        $velicina = $row['velicine_id'];
+
+        // DOHVATANJE VELICINA
+
+        // $velicina = $row['velicine_id'];
     
    
         
@@ -74,52 +77,73 @@
         ?>     
 
         <?php echo "<img src='{$row['put']}' alt=''>"; ?>
-        <form action= "cart.php" method='POST' id="cartForm">
+
+        <form method='POST' id="cartForm">
         
                 <?php
                 echo "<h2>$naziv</h2>";
                 echo "<label for=''>Izaberi velicinu</label><br>";                  
-
-                if($velicina == 1){
+                
+                if($row['2XS'] == 1){
+                    echo "<input type='radio' name='velicina' id='' value='2XS'>2XS";
+                }
+                if($row['XS'] == 1){
+                    echo "<input type='radio' name='velicina' id='' value='XS'>XS";
+                }
+                if($row['S'] == 1){
                     echo "<input type='radio' name='velicina' id='' value='S'>S";
                 }
-                if($velicina == 2){
+                if($row['M'] == 1){
                     echo "<input type='radio' name='velicina' id='' value='M'>M";
                 }
-                if($velicina == 3){
+                if($row['L'] == 1){
                     echo "<input type='radio' name='velicina' id='' value='L'>L";
                 }
-                if($velicina == 4){
+                if($row['XL'] == 1){
                     echo "<input type='radio' name='velicina' id='' value='XL'>XL";
                 }
-                        
+                if($row['2XL'] == 1){
+                    echo "<input type='radio' name='velicina' id='' value='2XL'>2XL";
+                }
+                if($row['3XL'] == 1){
+                    echo "<input type='radio' name='velicina' id='' value='3XL'>3XL";
+                }
+                
+                echo "<input type='text' name='txt'>";
                 echo "<br><label>Cena: </label>
                        <p>$cena</p>";
                 ?>
-                <button type='button'  class='btn-prikaz' onclick='openPopup(); submitForm();' name="dodaj_u_korpu"  id="btnForm">Dodaj u korpu</button>
+                <button type='button'  class='btn-prikaz' onclick='openPopup()' name="dodaj_u_korpu"  id="btnForm">Dodaj u korpu</button>
   
         </form>
-                
 
-
-
-
-
+            <?php
+        if(isset($_POST['velicina'])){
+            $vel=$_POST['velicina'];    
+            echo $vel;
+            }
+        ?>
     <div class="popup "id="popup">
         <div class="scroll">
         <?php
 
             
-                //KAO NOVI KOD KOJI NE RADI
-            // $radio= $_POST['velicina'];
-            // echo "$radio";
-            
-            // if(isset($POST["dodaj_u_korpu"])){
+        if(isset($_POST['velicina'])){
+             $vel=$_POST['velicina'];    
+             echo $vel;
+        }
+
+            //KAO NOVI KOD KOJI NE RADI
+
+
+            // if(isset($_POST['dodaj_u_korpu'])){
             //         echo "fsfds";
+
             //     $sql= "SELECT *
             //         FROM artikal
             //         INNER JOIN slika on artikal.id = slika.artikal_id
             //         WHERE artikal.id = $artikal_id";
+
             //     $result = $mysqli->query($sql) or die($mysqli->error);
             //     $artikal = $result->fetch_accos();
 
@@ -145,11 +169,6 @@
                 
 
             // }
-
-
-    
-
-
 
 
                 // STARI KOD ZA KORPU 
@@ -208,59 +227,12 @@
                 <a href='cart.php' ><button class='korpa-bttn'>Idi u Korpu</button></a>
             </div>
     </div>  
-        
-     <?php require_once "footer.php";?>
-<script>
-const popup = document.querySelector('.popup');
-const body = document.querySelector('body');
-const btnPrikaz = document.querySelector('.btn-prikaz');
-
-btnPrikaz.addEventListener('click', function() {
-  togglePopup();
-});
-
-function togglePopup() {
-  popup.classList.toggle('open-popup');
-  body.classList.toggle('blur');
-  // provjerava da li je popup otvoren
-  
-}
-
-popup.addEventListener('click', function(e) {
-  // ako se klikne izvan popupa zatvara se popup
-  if (e.target !== popup) {
-    togglePopup();
-  }
-});
-
-
-document.addEventListener('keyup', function(e) {
-  // ako se pritisne Escape zatvara se popup
-  if (e.key === 'Escape' && popup.classList.contains('open-popup')) {
-    togglePopup();
-  }
-});
-
-// Sakrij popup element kada se stranica učita
-popup.classList.remove('open-popup');
-
-
-
-
-// function submitForm() {
-//   var form = document.getElementById("cartForm");
-//   var xhr = new XMLHttpRequest();                        ne brisati
-//   xhr.open("GET", "prikaz.php", true);
-//   xhr.onload = function() {
-//     if (xhr.readyState === 4 && xhr.status === 200) {
-//       console.log(xhr.responseText);
-//     }
-//   };
-//   xhr.send(new FormData(form));
-// }
-
-</script>
+            
+    
     <?php require_once "footer.php";?>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="javascript.js"></script>
 </body>
 </html>
