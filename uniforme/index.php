@@ -48,22 +48,20 @@
             echo "<div>
                     <a href='prikaz.php?id={$row['id']}'><img src='{$row['put']}' alt=''></a>
                     <p>{$row['naziv']}</p>
-                    <p class='cena'>{$row['cena']}</p>
+                    <p class='cena'>{$row['cena']} din</p>
                   </div>";
               $count++;
             }
         } else {
           echo  "<div class='nsl'>
-                  <a class='naslovna' href='index.php?vrsta=bluze'><img class='rotirajdesno' src='artikli/pocetna_z_slika01' alt=''></a>
-                  <p class='slogan'>OPREMITE SE ZA SVOJU BUDUCNOST</p>
-                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img class='rotirajlevo' src='artikli/pocetna_m_slika01' alt=''></a>
+                  <a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika01' alt=''></a>        
+                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika01' alt=''></a>
                 </div>";
                 echo "<style>
-                .naslovnacnt {
+                .naslovnacnt , .nsl{
                   display: flex;
-                  justify-content: center;
+                  justify-content: space-around;
                   align-items: center;
-                  flex-direction: row;
                 }
               </style>";
         }
@@ -84,9 +82,10 @@
         });
         </script> -->
     </div>
+
     <?php require_once "footer.php";?>
    
-    <script src="skripta.js"></?script>
+    
 </body>
 </html>
 </html>

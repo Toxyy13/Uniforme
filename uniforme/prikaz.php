@@ -20,8 +20,7 @@
     <link rel="stylesheet" href="index.css">
 
 </head>
-<body>
-
+<body class="prikazbody">
 
     <?php
 

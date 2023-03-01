@@ -33,6 +33,11 @@ img :not(#logo) {
   z-index: -100;
   width: 30%;
 }
+.nsl img {
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
 .logonaslov {
   max-width: 100px;
 }
@@ -422,3 +427,8 @@ body.blur::before {
 } */
 
 /* OVDE SE ZAVRSAVA POPUP KORPA */
+
+/* 
+PRIKAZ.PHP CSS*/
+
+
