@@ -54,8 +54,8 @@
             }
         } else {
           echo  "<div class='nsl'>
-                  <a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika' alt=''></a>
-                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika' alt=''></a>
+                  <a class='naslovna' href='index.php?vrsta=bluze'><img src='artikli/pocetna_z_slika01' alt=''></a>
+                  <a class='naslovna' href='index.php?vrsta=bluzeM'><img src='artikli/pocetna_m_slika01' alt=''></a>
                 </div>";
         }
 
