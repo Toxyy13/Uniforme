@@ -9,6 +9,9 @@
   text-decoration: none;
   list-style: none;
 }
+body{
+  background:#ec8794a4;
+}
 .naslovna img{
   height: 70vh;
   /* margin-top: 40px; 
@@ -20,7 +23,7 @@ a {
   color: white;
 }
 a::before :hover {
-  color: #fb3434;
+  color: #ff5c72;
 }
 img :not(#logo) {
   z-index: -100;
@@ -44,13 +47,13 @@ img :not(#logo) {
   padding: 30px 0 30px 0;
   font-size: 3em;
   letter-spacing: 8px;
-  color: #fb3434;
+  color: #ff5c72;
 }
 nav {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  background-color: #fb3434;
+  background-color: #ff5c72;
   padding: 20px 0 20px 0;
   height: 100px;
   text-align: center;
@@ -58,14 +61,21 @@ nav {
 }
 .naslovnacnt {
   width: 100%;
+  text-align:center;
+  
 }
-.naslovna {
-  width: 100%;
+.ndstpn{
+  background-color: #ff5c72;
+  color:white;
 }
-.naslovna img {
-  width: 30%;
-  background-color: transparent;
+.nsl{
+  width:100%;
+  display:flex;
+  
+  justify-content: space-around;
+  align-items: center;
 }
+
 
 a {
   text-transform: uppercase;
@@ -73,7 +83,7 @@ a {
 }
 .vrsta {
   padding: 20px;
-  background: #fb3434;
+  background: #ff5c72;
 }
 .vrsta ul {
   display: none;
@@ -83,7 +93,7 @@ a {
 }
 
 .vrste {
-  background: #fb3434;
+  background: #ff5c72;
   text-align: left;
   gap: 4px;
   position: relative;
@@ -94,7 +104,7 @@ a {
 }
 .vrsta:hover,
 .vrsta a:hover {
-  color: #e17777;
+  color: #ac9797d0;
 }
 
 /* FOOTER CSS */
@@ -256,7 +266,8 @@ footer .content .link-boxes .box {
 }
 footer .bottom-details {
   width: 100%;
-  background: #fb3434;
+  background: #ff5c72;
+  border-top:#afafb6 solid 3px;
 }
 footer .bottom-details .bottom_text {
   max-width: 1250px;

@@ -18,7 +18,7 @@
     
   }
   
-  popup.addEventListener('click', function(e) {
+  body.addEventListener('click', function(e) {
     // ako se klikne izvan popupa zatvara se popup
     if (e.target !== popup) {
       togglePopup();
