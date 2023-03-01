@@ -12,20 +12,13 @@
 body {
   background: #ec8794a4;
 }
-.naslovna img {
-  width: 70%;
-}
+
 .slogan {
   color: #ff5c72;
   text-align: center;
   font-weight: bolder;
 }
-.rotirajdesno {
-  transform: rotate("15deg");
-}
-.rotirajlevo {
-  transform: rotate("-15deg");
-}
+
 a {
   text-decoration: none;
   color: white;
@@ -38,7 +31,7 @@ img :not(#logo) {
 }
 .naslovna {
   z-index: -100;
-  width: 60%;
+  width: 30%;
 }
 .logonaslov {
   max-width: 100px;
@@ -61,21 +54,10 @@ nav {
   text-align: center;
   z-index: 100;
 }
-.naslovnacnt {
-  width: 100%;
-  text-align: center;
-}
+
 .ndstpn {
   background-color: #ff5c72;
   color: white;
-}
-
-.nsl {
-  width: 100%;
-  display: flex;
-
-  justify-content: space-around;
-  align-items: center;
 }
 
 a {
@@ -106,6 +88,58 @@ a {
 .vrsta:hover,
 .vrsta a:hover {
   color: #ac9797d0;
+}
+.naslovnacnt {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+  padding: 50px;
+  color: #f2475e;
+}
+.cena {
+  background: #ff5c72;
+  color: white;
+  padding: 2px 10px;
+  border: solid 2px white;
+  border-radius: 5px;
+}
+
+.naslovnacnt > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.naslovnacnt > div img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.naslovnacnt > div p {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .naslovnacnt {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .naslovnacnt {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .naslovnacnt {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 /* FOOTER CSS */
@@ -246,6 +280,9 @@ footer .content .link-boxes .box {
   font-size: 15px;
   color: #fff;
   margin-top: 5px;
+}
+.box li {
+  color: white;
 }
 .link-boxes .input-box input::placeholder {
   color: #afafb6;

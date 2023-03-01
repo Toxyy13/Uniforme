@@ -48,7 +48,7 @@
             echo "<div>
                     <a href='prikaz.php?id={$row['id']}'><img src='{$row['put']}' alt=''></a>
                     <p>{$row['naziv']}</p>
-                    <p>{$row['cena']}</p>
+                    <p class='cena'>{$row['cena']}</p>
                   </div>";
               $count++;
             }
@@ -58,6 +58,14 @@
                   <p class='slogan'>OPREMITE SE ZA SVOJU BUDUCNOST</p>
                   <a class='naslovna' href='index.php?vrsta=bluzeM'><img class='rotirajlevo' src='artikli/pocetna_m_slika01' alt=''></a>
                 </div>";
+                echo "<style>
+                .naslovnacnt {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: row;
+                }
+              </style>";
         }
 
         if($count===0){
@@ -67,14 +75,14 @@
         }
 
       ?>
-      <script>
+      <!-- <script>
         $(document).ready(function() {
           setInterval(function() {
             $('.rotiraj-levo').animate({ deg: '-=15deg' }, { duration: 500 });
             $('.rotiraj-desno').animate({ deg: '+=15deg' }, { duration: 500 });
           }, 5000); // promena smera rotacije svakih 5 sekundi
         });
-        </script>
+        </script> -->
     </div>
     <?php require_once "footer.php";?>
    
