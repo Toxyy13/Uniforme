@@ -44,34 +44,6 @@
         // DOHVATANJE VELICINA
 
         // $velicina = $row['velicine_id'];
-    
-   
-        
-        // if($velicina == 1){
-        //     $s = "S";
-        // } else $s = NULL;
-        // if($velicina == 2 ){
-        //     $m = "M";
-        // } else $s = NULL;
-        // if($velicina == 3 ){
-        //     $l = "L";
-        // } else $s = NULL;
-        // if($velicina == 4 ){
-        //     $xl = "XL";
-        // } else $s = NULL;
-
-        // if($row['S']!=0){
-        //     $s="S";
-        // }else $s= NULL;
-        // if($row['M']!=0){
-        //     $m="M";
-        // }else $m= NULL;
-        // if($row['L']!=0){
-        //     $l="L";
-        // }else $l= NULL;
-        // if($row['XL']!=0){
-        //     $xl="XL";
-        // } else $xl= NULL;
 
         ?>     
 
@@ -127,10 +99,10 @@
         <?php
 
             
-        if(isset($_POST['velicina'])){
-             $vel=$_POST['velicina'];    
-             echo $vel;
-        }
+        // if(isset($_POST['velicina'])){
+        //      $vel=$_POST['velicina'];    
+        //      echo $vel;
+        // }
 
             //KAO NOVI KOD KOJI NE RADI
 
@@ -173,11 +145,12 @@
                 // STARI KOD ZA KORPU 
 
             if(isset($_SESSION['cart'])){
-            echo "
-            <div class='korpa-naziv'>
-             Korpa
-            </div>";
-            
+                
+                echo "
+                <div class='korpa-naziv'>
+                 Korpa
+                </div>";
+
             if($_SESSION['cart'][0] == 0 ){
                 $_SESSION['cart'][0] = $artikal_id;
             }
@@ -196,36 +169,34 @@
             foreach($_SESSION['cart'] as $key=>$value){
                  // echo "<script>alert('Artikal je vec dodat u korpu!')</script>";
                 
-            $sql= "SELECT * 
-                  FROM artikal 
-                  INNER JOIN slika on slika.artikal_id = artikal.id
-                  WHERE artikal.id = $value;";
+                $sql= "SELECT * 
+                    FROM artikal 
+                    INNER JOIN slika on slika.artikal_id = artikal.id
+                    WHERE artikal.id = $value;";
 
-                 $result = $mysqli->query($sql) or die($mysqli->error);
-                 $row = $result->fetch_assoc();
-                 $naziv = $row['naziv'];
-                 $cena= $row['cena'];
-            
-                    echo "
-                 <div class='popup-prikaz row'>
-                    <div class='col-4'>
-                        <img src ='{$row['put']}' class='popup-slika'>
-                    </div>
-                    <div class='popup-info col-8'>
-                            <p>$naziv<br>
-                            $cena RSD</p>
-                    </div>
-                 </div>";
-            
+                    $result = $mysqli->query($sql) or die($mysqli->error);
+                    $row = $result->fetch_assoc();
+                    $naziv = $row['naziv'];
+                    $cena= $row['cena'];
+                
+                        echo "  <div class='popup-prikaz row'>
+                                    <div class='col-4'>
+                                        <img src ='{$row['put']}' class='popup-slika'>
+                                    </div>
+                                    <div class='popup-info col-8'>
+                                            <p>$naziv<br>
+                                            $cena RSD</p>
+                                    </div>
+                                </div>";     
             }
-        
-            }
+        }
         ?>
          </div>
             <div class="cart-btn">
                 <a href='cart.php' ><button class='korpa-bttn'>Idi u Korpu</button></a>
             </div>
     </div>  
+        
             
     
     <?php require_once "footer.php";?>

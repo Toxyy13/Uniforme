@@ -8,11 +8,11 @@
         $_SESSION['cart'] = array();
     }
 
-    if(isset($_SESSION['korpa'])) {
-        $korpa = $_SESSION['korpa'];
-    } else {
-        $korpa = array();
-        $_SESSION['korpa']= $korpa;
-    }
+    // if(isset($_SESSION['korpa'])) {
+    //     $korpa = $_SESSION['korpa'];
+    // } else {
+    //     $korpa = array();
+    //     $_SESSION['korpa']= $korpa;
+    // }
 
 ?>

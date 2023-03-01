@@ -30,68 +30,52 @@
         <?php
 
 
-            if(isset($_SESSION['korpa'])) {
-                $korpa = $_SESSION['korpa'];
-                foreach($korpa as $artikal) {
-                echo $artikal['naziv'] . " x " . $artikal['kolicina'] . "<br>";
-                echo "Cijena: " . $artikal['cijena'] . " KM <br>";
-                echo "<form action='azuriraj_korpu.php' method='post'>";
-                echo "<input type='hidden' name='artikal_id' value='" . $artikal['id'] . "'>";
-                echo "Količina: <input type='number' name='kolicina' min='1' value='" . $artikal['kolicina'] . "'>";
-                echo "<button type='submit' name='azuriraj_kolicinu'>Ažuriraj</button>";
-                echo "<button type='submit' name='ukloni_iz_korpe'>Ukloni</button>";
-                echo "</form>";
-                echo "<br>";
-                }
-            } 
+            // if(isset($_SESSION['korpa'])) {
+            //     $korpa = $_SESSION['korpa'];
+            //     foreach($korpa as $artikal) {
+            //     echo $artikal['naziv'] . " x " . $artikal['kolicina'] . "<br>";
+            //     echo "Cijena: " . $artikal['cijena'] . " KM <br>";
+            //     echo "<form action='azuriraj_korpu.php' method='post'>";
+            //     echo "<input type='hidden' name='artikal_id' value='" . $artikal['id'] . "'>";
+            //     echo "Količina: <input type='number' name='kolicina' min='1' value='" . $artikal['kolicina'] . "'>";
+            //     echo "<button type='submit' name='azuriraj_kolicinu'>Ažuriraj</button>";
+            //     echo "<button type='submit' name='ukloni_iz_korpe'>Ukloni</button>";
+            //     echo "</form>";
+            //     echo "<br>";
+            //     }
+            // } 
             
             
-            // foreach($_SESSION['cart'] as $key=>$value){
-            //     $result = $mysqli->query("SELECT * FROM $table WHERE artikal.id=$value") or die($mysqli->error);
-            //     $row = $result->fetch_assoc();
-            //     $naziv = $row['naziv'];
-            //     $cena= $row['cena'];
+            foreach($_SESSION['cart'] as $key=>$value){
+                
+                $sql = "SELECT * 
+                FROM artikal 
+                INNER JOIN slika on slika.artikal_id = artikal.id
+                WHERE artikal.id = $value;";
 
-            //     echo "
-            //       <div class='col-3'>
-            //         <div class='cart-img'>
-            //             <img src ='{$row['slika']}' >
-            //         </div>
+                $result = $mysqli->query($sql) or die($mysqli->error);
+                $row = $result->fetch_assoc();
+                $naziv = $row['naziv'];
+                $cena= $row['cena']; 
+                $put = $row['put'];
 
-            //         <div class='cart-info'>
+                echo "
+                  <div class=''>
+                    <div class='cart-img'>
+                        <img src ='{$put}' >
+                    </div>
+
+                    <div class='cart-info'>
                         
-            //                 <p>$naziv<br>
-            //                 $cena RSD</p>
+                            <p>$naziv<br>
+                            $cena RSD</p>
     
-            //         </div>
-            //      </div>";
+                    </div>
+                 </div>";
 
-            // }
+            }
 
             // $product_id = array_column($_SESSION['cart'],'product_id');
-
-            // foreach($_SESSION['cart'] as $key=>$value){
-
-            //     echo $value;
-
-            //     $sql="SELECT * FROM $table WHERE id='{$artikal_id}'";
-
-            //     $result = $mysqli->query($sql) or die($mysqli->error);
-
-            //     $row = mysqli_fetch_assoc($result);
-
-            //     cartElement($row['slika'],$row['naziv'],$row['cena']);
-                
-            // }
-
-
-            // while($row=mysqli_fetch_assoc($result)){
-            //     foreach($product_id as $id){
-            //         if($row['id']==$id){
-            //             cartElement($row['product_img'],$row['product_name'],$row['product_price']);
-            //         }
-            //     }
-            // }
 
         ?>
 
