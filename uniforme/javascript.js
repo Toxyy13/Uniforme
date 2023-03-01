@@ -1,24 +1,3 @@
-$(document).ready(function() {
-    $('#my-form').submit(function(e) {
-      e.preventDefault(); // sprečava automatsko slanje forme
-  
-      $.ajax({
-        url: $(this).attr('action'),
-        type: $(this).attr('method'),
-        data: $(this).serialize(),
-        success: function(response) {
-          // ovde možete da obradite odgovor sa servera
-          console.log(response);
-        },
-        error: function(xhr, status, error) {
-          // ovde možete da obradite grešku
-          console.error(error);
-        }
-      });
-    });
-  });
-  
-  
   const popup = document.querySelector('.popup');
   const body = document.querySelector('body');
   const btnPrikaz = document.querySelector('.btn-prikaz');
@@ -81,3 +60,13 @@ $(document).ready(function() {
   //   xhr.send(new FormData(form));
   // }
   
+
+  $(document).ready(function(){
+      $("cartForm").submit(function(event){
+          event.preventDefault();
+
+          var velicina = document.querySelector('input[name="velicina"]:checked').value;
+
+          $.post("functions.php",{ velicina:velicina})
+      })
+  })

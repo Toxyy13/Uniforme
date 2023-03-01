@@ -36,7 +36,7 @@
           artikal.id as id,
           artikal.naziv as naziv,
           artikal.cena as cena, 
-          vrsta.naziv
+          vrsta.naziv as vrsta
           FROM slika
           INNER JOIN artikal on slika.artikal_id = artikal.id
           INNER JOIN vrsta on vrsta.id = artikal.vrsta_id
@@ -61,8 +61,8 @@
           echo "<div>
                     <h3>ARTIKLI NISU TRENUTNO DOSTUPNI</h3>
                 </div>";
-                  
         }
+
       ?>
     </div>
     <?php require_once "footer.php";?>
