@@ -41,7 +41,13 @@ INSERT INTO artikal(`sifra`,`naziv`,`vrsta_id`,`pol_id`,`cena`,`2XS`,`XS`,`S`,`M
                    (NULL,'Muska bluza SUPERSTRETCH',8,1,5999,1,1,1,1,1,1,NULL,NULL,'Lagana bluza koja pruza neverovatan osecaj lakoce i udobnosti. Sastav bluze: 60%pamuk, 35%poliester i 5%elastin'),
                    (NULL,'Muske pantalone',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester'),
                    (NULL,'Muske pantalone',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester'),
-                   (NULL,'Muske pantalone',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester');
+                   (NULL,'Muske pantalone',9,1,5999,NULL,NULL,1,1,1,1,1,1,'Produzeni model pantalone sa lastizom, sa 2 dzepa. Sastav 35%pamuk i 65%poliester'),
+                   (NULL,'Zenska haljina',4,2,5999,NULL,1,1,NULL,NULL,1,1,1,'Strukirana haljina na rajsfeslus sa paspulom i 3 dzepa(Mantil haljina)'),
+                   (NULL,'Zenska haljina',4,2,5999,NULL,1,NULL,NULL,1,1,1,1,'Strukirana haljina na rajsfeslus sa paspulom i 3 dzepa(Mantil haljina)'),
+                   (NULL,'Zenska haljina',4,2,5999,NULL,1,1,1,NULL,1,1,1,'Strukirana haljina na rajsfeslus sa paspulom i 3 dzepa(Mantil haljina)'),
+                   (NULL,'Zenska haljina',4,2,5999,NULL,NULL,1,NULL,NULL,1,1,1,'Strukirana haljina na rajsfeslus sa strane i 2 dzepa'),
+                   (NULL,'Zenska haljina',4,2,5999,NULL,NULL,NULL,NULL,NULL,1,NULL,1,'Strukirana haljina na rajsfeslus sa strane i 2 dzepa'),
+                   (NULL,'Zenska haljina',4,2,5999,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'Strukirana haljina na rajsfeslus sa strane i 2 dzepa');
 
 INSERT INTO slika(`put`,`artikal_id`) VALUES
                  ("artikli/Muska bluza nitna1.jpg", 1),
@@ -57,7 +63,13 @@ INSERT INTO slika(`put`,`artikal_id`) VALUES
                  ("artikli/Muska bluza SUPERSTRETCH05.jpg", 11),
                  ("artikli/Muske pantalone01.jpg", 12),
                  ("artikli/Muske pantalone02.jpg", 13),
-                 ("artikli/Muske pantalone03.jpg", 14);
+                 ("artikli/Muske pantalone03.jpg", 14),
+                 ("artikli/Zenska haljina.jpg", 15),
+                 ("artikli/Zenska haljina2.jpg", 16),
+                 ("artikli/Zenska haljina3.jpg", 17),
+                 ("artikli/Zenska haljina4.jpg", 18),
+                 ("artikli/Zenska haljina5.jpg", 19),
+                 ("artikli/Zenska haljina6.jpg", 20);
 
 
 
