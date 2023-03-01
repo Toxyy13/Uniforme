@@ -9,9 +9,6 @@
   text-decoration: none;
   list-style: none;
 }
-body {
-  background: #ec8794a4;
-}
 
 .slogan {
   color: #ff5c72;
@@ -29,10 +26,7 @@ a::before :hover {
 img :not(#logo) {
   z-index: -100;
 }
-.naslovna {
-  z-index: -100;
-  width: 30%;
-}
+
 .nsl img {
   height: auto;
   object-fit: cover;
@@ -59,10 +53,16 @@ nav {
   text-align: center;
   z-index: 100;
 }
-
+.slogan {
+  height: 70vh;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
 .ndstpn {
   background-color: #ff5c72;
   color: white;
+  width: 100%;
 }
 
 a {
@@ -95,11 +95,19 @@ a {
   color: #ac9797d0;
 }
 .naslovnacnt {
+  background: black;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
   padding: 50px;
   color: #f2475e;
+}
+.nsl {
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: max-content;
 }
 .cena {
   background: #ff5c72;
@@ -430,5 +438,3 @@ body.blur::before {
 
 /* 
 PRIKAZ.PHP CSS*/
-
-
