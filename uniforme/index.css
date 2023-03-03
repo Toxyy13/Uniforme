@@ -95,7 +95,7 @@ a {
   color: #ac9797d0;
 }
 .naslovnacnt {
-  background: #FFC2CA;
+  background: #FFFFFF;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px; 
@@ -435,6 +435,19 @@ body.blur::before {
 } */
 
 /* OVDE SE ZAVRSAVA POPUP KORPA */
+
+.cart-price{    /* kod za deo koji fodi ka formi za narucivanje  */
+  position: fixed;
+  height: 13%;
+  width: 100vw;
+  bottom: 0px;
+  border: solid 1px white;
+  color: white;
+  background-color: #ff5c72;
+}
+
+
+
 
 /* 
 PRIKAZ.PHP CSS*/

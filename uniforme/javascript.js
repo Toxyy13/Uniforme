@@ -2,10 +2,6 @@
   const body = document.querySelector('body');
   const btnPrikaz = document.querySelector('.btn-prikaz');
   
-  function submitForm(){
-      document.getElementById("formTest").submit();
-  }
-  
   btnPrikaz.addEventListener('click', function() {
     togglePopup();
   });   
@@ -36,50 +32,73 @@
   // Sakrij popup element kada se stranica učita
   popup.classList.remove('open-popup');
   
-  
-  // let btnPosalji = document.getElementByID("btnForm");
-  
-  // btnPosalji.addEventListener("click", e =>){
-  //     e.preventDefault();
-  
-  //     let form = document.getElementById("cartForm");
-  //     // uraditi bilo šta sa formom ovde, kao što je slanje AJAX zahteva
-  //     form.submit(); // ručno slanje forme na server nakon obrade u JavaScript-u
-  
-  // }
-  
-  // function submitForm() {
-  //   var form = document.getElementById("cartForm");
-  //   var xhr = new XMLHttpRequest();                        ne brisati
-  //   xhr.open("GET", "prikaz.php", true);
-  //   xhr.onload = function() {
-  //     if (xhr.readyState === 4 && xhr.status === 200) {
-  //       console.log(xhr.responseText);
-  //     }
-  //   };
-  //   xhr.send(new FormData(form));
-  // }
-  
-  document.getElementById('cartForm').addEventListener('submit', function(event) {
-    // Spriječi podrazumevano ponašanje forme da osveži stranicu
-    event.preventDefault();
 
-    // Učitajte podatke forme u promenljivu formData
-    const formData = new FormData(event.target);
+  
+  
+  // document.getElementById('cartForm').addEventListener('submit', function(event) {
+  //   // Spriječi podrazumevano ponašanje forme da osveži stranicu
+  //   event.preventDefault();
 
-    // Sada možete obraditi podatke forme na željeni način, na primer slanjem AJAX zahteva
-    // Ovde ćemo jednostavno ispisati podatke forme u konzoli
-    for (var pair of formData.entries()) {
-      console.log(pair[0]+ ': ' + pair[1]);
+  //   // Učitajte podatke forme u promenljivu formData
+  //   const formData = new FormData(event.target);
+
+  //   // Sada možete obraditi podatke forme na željeni način, na primer slanjem AJAX zahteva
+  //   // Ovde ćemo jednostavno ispisati podatke forme u konzoli
+  //   for (var pair of formData.entries()) {
+  //     console.log(pair[0]+ ': ' + pair[1]);
+  //   }
+  // });
+
+  // $(document).ready(function(){
+  //     $("cartForm").submit(function(event){
+  //         event.preventDefault();
+
+  //         var velicina = document.querySelector('input[name="velicina"]:checked').value;
+
+  //         $.post("functions.php",{ velicina:velicina})
+  //     })
+  // })
+
+
+
+  // ----------------------------------------------------------------------------------------------
+
+
+//   $(document).ready(function() {
+//     $('#cartForm').submit(function(event) {
+//         // spriječavanje automatskog slanja forme
+//         event.preventDefault();
+        
+//         // slanje podataka forme na server putem AJAX-a
+//         $.ajax({
+//             type: 'POST',
+//             url: '',
+//             data: $('#cartForm').serialize(), // podaci forme
+//              success: function(response) {
+//                  // prikazivanje odgovora bez refresovanja cijele stranice
+//                 $('#response').html();
+//             }
+//         });
+//     });
+// });
+
+function sendData() {
+  var radios = document.getElementsByName('velicina');
+  var selectedValue;
+  for(var i = 0; i < radios.length; i++) {
+    if(radios[i].checked) {
+      selectedValue = radios[i].value;
+      break;
     }
-  });
-
-  $(document).ready(function(){
-      $("cartForm").submit(function(event){
-          event.preventDefault();
-
-          var velicina = document.querySelector('input[name="velicina"]:checked').value;
-
-          $.post("functions.php",{ velicina:velicina})
-      })
-  })
+  }
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'prikaz.php');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if(xhr.status === 200) {
+      console.log(xhr.responseText); // Ovdje možete manipulirati odgovorom
+    }
+  };
+  var data = 'radio_button=' + encodeURIComponent(selectedValue);
+  xhr.send(data);
+}

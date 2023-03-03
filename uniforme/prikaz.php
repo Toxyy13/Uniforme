@@ -49,70 +49,62 @@
 
         <?php echo "<img src='{$row['put']}' alt=''>"; ?>
 
-        <form method='POST' id="cartForm">
+        <form method="post" id="cartForm">
         
                 <?php
                 echo "<h2>$naziv</h2>";
                 echo "<label for=''>Izaberi velicinu</label><br>";                  
                 
                 if($row['2XS'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='2XS'>2XS";
+                    echo "<input type='radio' name='velicina' id='' value='2XS' required>2XS";
                 }
                 if($row['XS'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='XS'>XS";
+                    echo "<input type='radio' name='velicina' id='' value='XS' required>XS";
                 }
                 if($row['S'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='S'>S";
+                    echo "<input type='radio' name='velicina' id='' value='S' required>S";
                 }
                 if($row['M'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='M'>M";
+                    echo "<input type='radio' name='velicina' id='' value='M' required>M";
                 }
                 if($row['L'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='L'>L";
+                    echo "<input type='radio' name='velicina' id='' value='L' required>L";
                 }
                 if($row['XL'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='XL'>XL";
+                    echo "<input type='radio' name='velicina' id='' value='XL' required>XL";
                 }
                 if($row['2XL'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='2XL'>2XL";
+                    echo "<input type='radio' name='velicina' id='' value='2XL' required>2XL";
                 }
                 if($row['3XL'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='3XL'>3XL";
+                    echo "<input type='radio' name='velicina' id='' value='3XL' required>3XL";
                 }
                 
                 echo "<input type='text' name='txt'>";
                 echo "<br><label>Cena: </label>
                        <p>$cena</p>";
                 ?>
-                <button type='submit'  class='btn-prikaz' onclick='openPopup()' name="dodaj_u_korpu"  id="btnForm">Dodaj u korpu</button>
+            <button type='submit'  class='btn-prikaz' name="dodaj_u_korpu" onclick="sendData() openPopup()" id="btnForm">Dodaj u korpu</button>
   
         </form>
 
 
-                <div>
-                <?php
-                    // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    // // Podaci iz forme su poslati na server sa metodom POST
-                    // // Možete sada prikazati podatke iz forme na istoj stranici
+        <div id="response"></div>
 
-                    // // Prikazati podatke iz forme
-                    // echo '<h2>Podaci iz forme:</h2>';
-                    // echo '<ul>';
-                    // foreach ($_POST as $key => $value) {
-                    //     echo '<li>' . htmlspecialchars($key) . ': ' . htmlspecialchars($value) . '</li>';
-                    // }
-                    // echo '</ul>';
-                    // }
-                    // ?>
-
-                </div>
+        <div>
+            <?php
+            if(isset($_POST['velicina'])){
+                  $radio_button = $_POST['velicina'];
+                  echo $radio_button;}
+            ?> 
+        </div>
 
             <?php
-                if(isset($_POST['dodaj_u_korpu'])){
-        
+                if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dodaj_u_korpu'])){
+                    
+                    
                     if(isset($_GET['id'])){ 
                         $artikal_id = $_GET['id'];
-                    
                     }
 
                 $sql= "SELECT *
@@ -145,10 +137,12 @@
                 
                 $_SESSION['cart'] = $korpa;
                 
-                // foreach($korpa as $artikal) {
-                //     echo $artikal['naziv'] . " x " . $artikal['kolicina'] ;
-                //     echo $artikal['velicina']. "<br>";
-                // }
+                foreach($korpa as $artikal) {
+                    echo $artikal['naziv'] ;
+                    echo " " . $artikal['velicina']. "<br>";
+                }
+            } else {
+              
             }
         ?>
 
@@ -156,12 +150,7 @@
     <div class="popup "id="popup">
         <div class="scroll">
         <?php
-
-            
-        // if(isset($_POST['velicina'])){
-        //      $vel=$_POST['velicina'];    
-        //      echo $vel;
-        // }
+        
 
             //KAO NOVI KOD KOJI NE RADI
 
@@ -260,6 +249,8 @@
             
     
     <?php require_once "footer.php";?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

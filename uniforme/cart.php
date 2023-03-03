@@ -47,7 +47,7 @@
             
             if(isset($_SESSION['cart'])){
                 $korpa = $_SESSION['cart'];
-
+                $ukupna_cena = 0;
                 foreach($korpa as $artikal){
 
                     $id = $artikal['id'];
@@ -64,6 +64,7 @@
                     $naziv = $row['naziv'];
                     $cena= $row['cena']; 
                     $put = $row['put'];
+                    $ukupna_cena = $ukupna_cena + $cena;
 
                     echo "
                           <div class=''>
@@ -117,8 +118,15 @@
 
     </div>
     </div>
-    <div class="cart-price">
 
+    <div class="cart-price">
+        <span> <a href="index.php"><button>Nazad</button></a></span>
+        <span>
+            <?php
+                echo "Ukupna cena korpe je $ukupna_cena RSD";
+            ?>
+        </span>
+        <span> <a href="form.php"><button>Dalje</button></a></span>
     </div>
 
     <script src="index.js" type="text/jsx"></script>
