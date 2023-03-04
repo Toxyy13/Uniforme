@@ -22,9 +22,8 @@
 </head>
 <body>
     <div class="cart-container">
-    <?php require_once "nav.php";?>
+    <?php require_once "nav.php";?> 
 
-    
     <div class="cart-box row">
 
         <?php
@@ -81,7 +80,7 @@
                             </div>
                          </div>";
                 }
-            }
+            } 
             
             // foreach($_SESSION['cart'] as $key=>$value){
                 
@@ -114,7 +113,7 @@
 
             // $product_id = array_column($_SESSION['cart'],'product_id');
 
-        ?>
+        ?>*/
 
     </div>
     </div>

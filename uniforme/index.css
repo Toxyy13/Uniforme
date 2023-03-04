@@ -451,3 +451,9 @@ body.blur::before {
 
 /* 
 PRIKAZ.PHP CSS*/
+h2{
+  color: red;
+}
+.cartForm{
+  padding-left: 20px;
+}

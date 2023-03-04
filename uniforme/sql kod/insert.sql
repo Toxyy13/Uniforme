@@ -25,7 +25,7 @@ INSERT INTO velicine(`size`) VALUES
                     ('L'),
                     ('XL'),
                     ('2XL'),
-                    ('3XL');
+                    ('3XL');  
 
 INSERT INTO artikal(`sifra`,`naziv`,`vrsta_id`,`pol_id`,`cena`,`2XS`,`XS`,`S`,`M`,`L`,`XL`,`2XL`, `3XL`,`opis`) VALUES
                    (NULL,'Muska bluza nitna',8,1,5999,NULL,NULL,NULL,NULL,1,1,1,1,'Muska bluza na kopcanje sa dikerima i 3 dzepa. Sastav 35% pamuk, 65%poliester.'),
@@ -48,6 +48,9 @@ INSERT INTO artikal(`sifra`,`naziv`,`vrsta_id`,`pol_id`,`cena`,`2XS`,`XS`,`S`,`M
                    (NULL,'Zenska haljina',4,2,5999,NULL,NULL,1,NULL,NULL,1,1,1,'Strukirana haljina na rajsfeslus sa strane i 2 dzepa'),
                    (NULL,'Zenska haljina',4,2,5999,NULL,NULL,NULL,NULL,NULL,1,NULL,1,'Strukirana haljina na rajsfeslus sa strane i 2 dzepa'),
                    (NULL,'Zenska haljina',4,2,5999,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'Strukirana haljina na rajsfeslus sa strane i 2 dzepa');
+                   
+
+
 
 INSERT INTO slika(`put`,`artikal_id`) VALUES
                  ("artikli/Muska bluza nitna1.jpg", 1),
@@ -70,9 +73,6 @@ INSERT INTO slika(`put`,`artikal_id`) VALUES
                  ("artikli/Zenska haljina4.jpg", 18),
                  ("artikli/Zenska haljina5.jpg", 19),
                  ("artikli/Zenska haljina6.jpg", 20);
-
-
-
 
 
 -- INSERT INTO dostupne_velicine (`artikal_id`,`velicine_id`)
