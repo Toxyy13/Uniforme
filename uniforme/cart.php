@@ -28,7 +28,6 @@
 
         <?php
 
-
             // if(isset($_SESSION['korpa'])) {
             //     $korpa = $_SESSION['korpa'];
             //     foreach($korpa as $artikal) {
