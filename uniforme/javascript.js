@@ -62,6 +62,29 @@
 
 
   // ----------------------------------------------------------------------------------------------
+//DROPDOWN MENU JS
+// // Get the button and dropdown list items
+// const button = document.querySelector('.dropdown-menu button');
+// const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown');
+
+// // Add a click event listener to the button
+// button.addEventListener('click', function(event) {
+//   event.stopPropagation(); // Prevent the click from closing the dropdown
+//   // Toggle the "show" class on each of the dropdown items
+//   dropdownItems.forEach(function(item) {
+//     item.classList.toggle('show');
+//   });
+// });
+
+// // Add a click event listener to the document
+// document.addEventListener('click', function(event) {
+//   // If the user clicked outside of the dropdown, hide it
+//   if (!event.target.closest('.dropdown-menu')) {
+//     dropdownItems.forEach(function(item) {
+//       item.classList.remove('show');
+//     });
+//   }
+// });
 
 
 //   $(document).ready(function() {

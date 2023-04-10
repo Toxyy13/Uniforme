@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="stil.css">
 
 </head>
 <body class="prikazbody">
-
+<div class="prikazwrap">
     <?php
 
     require_once "nav.php";            
@@ -55,25 +55,25 @@
                 echo "<label for=''>Izaberi velicinu</label><br>";                  
                 
                 if($row['2XS'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='2XS' required>2XS";
+                    echo "<input type='radio' name='velicina' id='' value='2XS' required>2XS   ";
                 }
                 if($row['XS'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='XS' required>XS";
+                    echo "<input type='radio' name='velicina' id='' value='XS' required>XS   ";
                 }
                 if($row['S'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='S' required>S";
+                    echo "<input type='radio' name='velicina' id='' value='S' required>S   ";
                 }
                 if($row['M'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='M' required>M";
+                    echo "<input type='radio' name='velicina' id='' value='M' required>M   "; 
                 }
                 if($row['L'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='L' required>L";
+                    echo "<input type='radio' name='velicina' id='' value='L' required>L   ";
                 }
                 if($row['XL'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='XL' required>XL";
+                    echo "<input type='radio' name='velicina' id='' value='XL' required>XL   ";
                 }
                 if($row['2XL'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='2XL' required>2XL";
+                    echo "<input type='radio' name='velicina' id='' value='2XL' required>2XL   ";
                 }
                 if($row['3XL'] == 1){
                     echo "<input type='radio' name='velicina' id='' value='3XL' required>3XL";
