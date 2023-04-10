@@ -46,7 +46,7 @@
 
         ?>     
 
-        <?php echo "<img src='{$row['put']}' alt=''>"; ?>
+        <?php echo "<img src='{$row['put']}' alt='' class='shopimg'>"; ?>
 
         <form method="post" class="cartForm">
         

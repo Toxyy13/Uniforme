@@ -2,6 +2,7 @@
     
 <nav >
     <a href="index.php" class="logonaslov"><img src="logo.png" id="logo" alt="POCETNA"></a>
+    
     <div class="vrsta">
         <a href="" class="meni">
             ZENSKA UNIFORMA</a>

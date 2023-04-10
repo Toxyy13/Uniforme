@@ -6,6 +6,7 @@
     
     // $haljina= 'haljina';
     // $pantalone = 'pantalone';
+    
 ?>
 
 <html>
@@ -54,12 +55,13 @@
             }
         } else {
           echo  "<div class='nsl'>
-                  <h1 class='slogan'>OPREMITE SE ZA SVOJU BUDUĆNOST</h1>
+                  
                 </div>";
                 echo "<style>
                 .naslovnacnt , .nsl{
                     display:block;
                     height:70vh;
+                   
                     
                 }
               </style>";

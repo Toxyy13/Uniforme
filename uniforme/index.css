@@ -33,7 +33,7 @@ img :not(#logo) {
   width: 100%;
 }
 .logonaslov {
-  max-width: 100px;
+  width: 100px;
 }
 #logo {
   width: 100%;
@@ -46,13 +46,24 @@ img :not(#logo) {
 nav {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #ff5c72;
   padding: 20px 0 20px 0;
   height: 100px;
   text-align: center;
   z-index: 100;
+  flex-wrap: wrap;
 }
+@media screen and (max-width: 900px) {
+  nav {
+    display: block;
+  }
+  .vrsta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .slogan {
   height: 70vh;
   width: 100%;
@@ -95,10 +106,10 @@ a {
   color: #ac9797d0;
 }
 .naslovnacnt {
-  background: #FFFFFF;
+  background: #ffffff;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 20px; 
+  grid-gap: 20px;
   padding: 50px;
   color: #f2475e;
 }
@@ -127,7 +138,7 @@ a {
   max-width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius:10%;
+  border-radius: 10%;
 }
 
 .naslovnacnt > div p {
@@ -161,6 +172,7 @@ footer {
   position: absolute;
   background: #ff5c72;
   width: 100%;
+  overflow: hidden;
 }
 footer::before {
   content: "";
@@ -436,7 +448,8 @@ body.blur::before {
 
 /* OVDE SE ZAVRSAVA POPUP KORPA */
 
-.cart-price{    /* kod za deo koji fodi ka formi za narucivanje  */
+.cart-price {
+  /* kod za deo koji fodi ka formi za narucivanje  */
   position: fixed;
   height: 13%;
   width: 100vw;
@@ -446,14 +459,14 @@ body.blur::before {
   background-color: #ff5c72;
 }
 
-
-
-
 /* 
 PRIKAZ.PHP CSS*/
-h2{
+h2 {
   color: red;
 }
-.cartForm{
-  padding-left: 20px;
+.cartForm {
+  width: 100%;
+}
+.shopimg {
+  width: 500px;
 }
