@@ -27,7 +27,7 @@ INSERT INTO velicine(`size`) VALUES
                     ('2XL'),
                     ('3XL');  
 
-INSERT INTO artikal(`sifra`,`naziv`,`vrsta_id`,`pol_id`,`cena`,`2XS`,`XS`,`S`,`M`,`L`,`XL`,`2XL`, `3XL`,`opis`) VALUES
+INSERT INTO artikal(`sifra`,`naziv`,`vrsta_id`,`pol_id`,`cena`,`2XS`,`XS`,`S`,`M`,`L`,`XL`,`2XL`, `3XL`,`opis`,slika1,slika2,slika3) VALUES
                    (NULL,'Muska bluza nitna',8,1,5999,NULL,NULL,NULL,NULL,1,1,1,1,'Muska bluza na kopcanje sa dikerima i 3 dzepa. Sastav 35% pamuk, 65%poliester.'),
                    (NULL,'Muska hirurska bluza',8,1,5999,NULL,NULL,1,1,1,1,1,1,'Muska hirurska bluza na V sa 3 dzepa. Sastav 35%pamuk, 65%poliester'),
                    (NULL,'Muska hirurska bluza',8,1,5999,NULL,NULL,1,1,1,1,1,1,'Muska hirurska bluza na V sa 3 dzepa. Sastav 35%pamuk, 65%poliester'),
