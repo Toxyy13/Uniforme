@@ -24,8 +24,8 @@
 
         </ul>
     </div>
-    <a href="" class="meni">KAPE</a>
-    <a href="" class="meni">MAJICE</a>
+    <a href="" class="vrsta">KAPE</a>
+    <a href="" class="vrsta">MAJICE</a>
     <a href="cart.php" class="cart meni">
             <i class="bi bi-cart" id="cart"></i>
             <?php 

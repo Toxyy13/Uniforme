@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="stil.css">
+    <link rel="stylesheet" href="cartt.css">
+
 
 </head>
 <body>
@@ -66,7 +68,7 @@
                     $ukupna_cena = $ukupna_cena + $cena;
 
                     echo "
-                          <div class=''>
+                          <div class='wraper'>
                           
                             <div class='cart-img'>
                                 <img src ='{$put}' >
@@ -113,19 +115,19 @@
 
             // $product_id = array_column($_SESSION['cart'],'product_id');
 
-        ?>*/
+        ?>
 
     </div>
     </div>
 
     <div class="cart-price">
-        <span> <a href="index.php"><button>Nazad</button></a></span>
-        <span>
+        <div> <a href="index.php"><button>Nazad</button></a></div>
+        <div>
             <?php
                 echo "Ukupna cena korpe je $ukupna_cena RSD";
             ?>
-        </span>
-        <span> <a href="form.php"><button>Dalje</button></a></span>
+        </div>
+        <div> <a href="form.php"><button>Dalje</button></a></div>
     </div>
 
     <script src="index.js" type="text/jsx"></script>
