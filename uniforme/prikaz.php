@@ -1,5 +1,4 @@
 <?php
-
     require_once "functions.php";
     $title = "prikaz";
     $table= 'artikal';
@@ -20,6 +19,7 @@
     <link rel="stylesheet" href="stil.css">
 
 </head>
+
 <body class="prikazbody">
 <div class="prikazwrap">
     <?php
@@ -39,213 +39,70 @@
         $row = $result->fetch_assoc();
         $naziv = $row['naziv'];   
         $cena = $row['cena'];
+        $opis = $row['opis'];
 
-        // DOHVATANJE VELICINA
+    ?>   
 
-        // $velicina = $row['velicine_id'];
-
-        ?>     
 
         <?php echo "<img src='{$row['put']}' alt='' class='shopimg'>"; ?>
 
-        <form method="post" class="cartForm">
-        
-                <?php
+        <form method="POST" class="cartForm">
+            
+            <?php
+
                 echo "<h2>$naziv</h2>";
-                echo "<label for=''>Izaberi velicinu</label><br>";                  
-                
+                echo "<label for=''><h5>Izaberi velicinu</h5></label><br>";                  
+                    
                 if($row['2XS'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='2XS' required>2XS   ";
+                    echo "<input type='radio' name='velicina' id='' value='2XS' required>2XS";
                 }
                 if($row['XS'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='XS' required>XS   ";
+                    echo "<input type='radio' name='velicina' id='' value='XS' required>XS";
                 }
                 if($row['S'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='S' required>S   ";
+                    echo "<input type='radio' name='velicina' id='' value='S' required>S";
                 }
                 if($row['M'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='M' required>M   "; 
+                    echo "<input type='radio' name='velicina' id='' value='M' required>M";
                 }
                 if($row['L'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='L' required>L   ";
+                    echo "<input type='radio' name='velicina' id='' value='L' required>L";
                 }
                 if($row['XL'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='XL' required>XL   ";
+                    echo "<input type='radio' name='velicina' id='' value='XL' required>XL";
                 }
                 if($row['2XL'] == 1){
-                    echo "<input type='radio' name='velicina' id='' value='2XL' required>2XL   ";
+                    echo "<input type='radio' name='velicina' id='' value='2XL' required>2XL";
                 }
                 if($row['3XL'] == 1){
                     echo "<input type='radio' name='velicina' id='' value='3XL' required>3XL";
                 }
-                
-                echo "<input type='text' name='txt'>";
-                echo "<br><label>Cena: </label>
-                       <p>$cena</p>";
-                ?>
-            <button type='submit'  class='btn-prikaz' name="dodaj_u_korpu" onclick="sendData() openPopup()" id="btnForm">Dodaj u korpu</button>
-  
-        </form>
 
+                echo "<div>
+                        <h5>Opis: </h5>
+                        <p>$opis</p>
+                    </div>";
+                    
+                echo "<br><label><h5>Cena: <h5></label>
+                    <p>$cena</p>";
 
-        <div id="response"></div>
+            ?>
 
-        <div>
-            <?php
+            <button type='submit'  class='btn-prikaz' name="dodaj_u_korpu" onclick="" id="btnForm">Dodaj u korpu</button>
+        
+        </form>     
+
+        <?php
             if(isset($_POST['velicina'])){
-                  $radio_button = $_POST['velicina'];
-                  echo $radio_button;}
-            ?> 
-        </div>
-
-            <?php
-                if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dodaj_u_korpu'])){
-                    
-                    
-                    if(isset($_GET['id'])){ 
-                        $artikal_id = $_GET['id'];
-                    }
-
-                $sql= "SELECT *
-                    FROM artikal
-                    INNER JOIN slika on artikal.id = slika.artikal_id
-                    WHERE artikal.id = $artikal_id";
-
-                $result = $mysqli->query($sql) or die($mysqli->error);
-                $artikal = mysqli_fetch_assoc($result);
-
-                $novi_artikal = array(
-                    'id' => $artikal['id'],
-                    'naziv' => $artikal['naziv'],
-                    'cena' => $artikal['cena'],
-                    'velicina' => $_POST['velicina'],
-                    'kolicina' => 1
-                );
-
-                if(isset($_SESSION['cart'])) {
-                    $korpa = $_SESSION['cart'];
-                    // provjera postoji li artikal u korpi
-                    if(array_key_exists($artikal_id, $korpa)) {
-                      $korpa[$artikal_id]['kolicina'] += 1;
-                    } else {
-                      $korpa[$artikal_id] = $novi_artikal;
-                    }
-                  } else {
-                    $korpa = array($artikal_id => $novi_artikal);
-                  }
+                $velicina = $_POST['velicina'];
                 
-                $_SESSION['cart'] = $korpa;
-                
-                foreach($korpa as $artikal) {
-                    echo $artikal['naziv'] ;
-                    echo " " . $artikal['velicina']. "<br>";
-                }
-            } else {
-              
+                dodajElement($artikal_id,$velicina);
+                // print_r($_SESSION['items']);
+                header("Refresh:0");
             }
         ?>
 
-
-    <div class="popup "id="popup">
-        <div class="scroll">
-        <?php
-        
-
-            //KAO NOVI KOD KOJI NE RADI
-
-
-            // if(isset($_POST['cartForm'])){
-
-            //     $sql= "SELECT *
-            //         FROM artikal
-            //         INNER JOIN slika on artikal.id = slika.artikal_id
-            //         WHERE artikal.id = $artikal_id";
-
-            //     $result = $mysqli->query($sql) or die($mysqli->error);
-            //     $artikal = $result->fetch_accos();
-
-            //     $novi_artikal = array(
-            //         'id' => $artikal['id'],
-            //         'naziv' => $artikal['naziv'],
-            //         'cena' => $artikal['cena'],
-            //         // 'velicina' => $artikal['velicina'],
-            //         'kolicina' => 1
-            //     );
-
-            //     if(isset($_SESSION['cart'])) {
-            //         $korpa = $_SESSION['cart'];
-            //         // provjera postoji li artikal u korpi
-            //         if(array_key_exists($artikal_id, $korpa)) {
-            //           $korpa[$artikal_id]['kolicina'] += 1;
-            //         } else {
-            //           $korpa[$artikal_id] = $novi_artikal;
-            //         }
-            //       } else {
-            //         $korpa = array($artikal_id => $novi_artikal);
-            //       }
-                
-            //     $_SESSION['cart'] = $korpa;
-                
-               
-
-            // }
-
-                // STARI KOD ZA KORPU 
-
-    //         if(isset($_SESSION['cart'])){
-                
-    //             echo "
-    //             <div class='korpa-naziv'>
-    //              Korpa
-    //             </div>";
-
-    //         if($_SESSION['cart'][0] == 0 ){
-    //             $_SESSION['cart'][0] = $artikal_id;
-    //         }
-            
-    //         $temp=0;
-    //         foreach($_SESSION['cart'] as $key){
-    //             if($key==$artikal_id)
-    //                 $temp=1;
-    //         }
-
-    //         if($temp==0){
-    //             array_push($_SESSION['cart'],$artikal_id);
-    //             $count=count($_SESSION['cart']);
-    //         }
-
-    //         foreach($_SESSION['cart'] as $key=>$value){
-    //              // echo "<script>alert('Artikal je vec dodat u korpu!')</script>";
-                
-    //             $sql= "SELECT * 
-    //                 FROM artikal 
-    //                 INNER JOIN slika on slika.artikal_id = artikal.id
-    //                 WHERE artikal.id = $value;";
-
-    //                 $result = $mysqli->query($sql) or die($mysqli->error);
-    //                 $row = $result->fetch_assoc();
-    //                 $naziv = $row['naziv'];
-    //                 $cena= $row['cena'];
-                
-    //                     echo "  <div class='popup-prikaz row'>
-    //                                 <div class='col-4'>
-    //                                     <img src ='{$row['put']}' class='popup-slika'>
-    //                                 </div>
-    //                                 <div class='popup-info col-8'>
-    //                                         <p>$naziv<br>
-    //                                         $cena RSD</p>
-    //                                 </div>
-    //                             </div>";     
-    //         }
-    //     }
-    //     ?>
-          </div>
-             <div class="cart-btn">
-                <a href='cart.php' ><button class='korpa-bttn'>Idi u Korpu</button></a>
-             </div>
-     </div>  
-        
-            
+</div>  
     
     <?php require_once "footer.php";?>
 

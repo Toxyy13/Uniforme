@@ -61,8 +61,6 @@
                 .naslovnacnt , .nsl{
                     display:block;
                     height:70vh;
-                   
-                    
                 }
               </style>";
         }
