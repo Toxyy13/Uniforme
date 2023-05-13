@@ -48,6 +48,7 @@ nav {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   background-color: #ff5c72;
   padding: 20px 0 20px 0;
   height: 100px;
@@ -59,8 +60,7 @@ nav {
   nav {
     display: block;
   }
-  .logonaslov {
-  }
+
   .vrsta {
     width: 50%;
   }
@@ -113,9 +113,10 @@ a {
   padding: 20px;
 }
 .vrsta:hover,
-.vrsta a:hover {
+.meni:hover {
   color: #ac9797d0;
 }
+
 .naslovnacnt {
   background: #ffffff;
   display: grid;

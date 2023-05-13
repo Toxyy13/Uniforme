@@ -1,0 +1,32 @@
+img {
+  max-width: 250px;
+  margin: auto;
+}
+.cart-box {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cart-img,
+.cart-box .wraper {
+  width: min-content;
+}
+.cart-price {
+  z-index: 1000;
+}
+.cart-price > div {
+  max-width: 500px;
+  margin: auto;
+}
+.cart-price a {
+  max-width: 500px;
+  margin: auto;
+}
+.cart-price a button {
+  width: 100%;
+}
+.cart-info {
+  font-size: 1em;
+  text-transform: uppercase;
+}
